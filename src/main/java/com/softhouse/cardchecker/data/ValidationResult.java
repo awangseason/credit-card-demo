@@ -11,15 +11,8 @@ public class ValidationResult {
     this.isValid = isValid;
   }
 
-  public String getCardNumber() {
-    return cardNumber;
-  }
-
-  public String getCardType() {
-    return cardType;
-  }
-
-  public Boolean getValid() {
-    return isValid;
+  @Override
+  public String toString() {
+    return cardType + ": " + cardNumber + " (" + (isValid ? "valid" : "invalid") + ')';
   }
 }

@@ -2,8 +2,11 @@ package com.softhouse.cardchecker.utility;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 
-public class AlgorithmTester {
+@RunWith(SpringRunner.class)
+public class AlgorithmTest {
 
   @Test
   public void testLuhnAlgorithm() {

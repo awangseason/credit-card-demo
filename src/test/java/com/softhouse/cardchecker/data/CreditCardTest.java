@@ -2,13 +2,16 @@ package com.softhouse.cardchecker.data;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static com.softhouse.cardchecker.data.CreditCard.AMEX;
 import static com.softhouse.cardchecker.data.CreditCard.Discover;
 import static com.softhouse.cardchecker.data.CreditCard.MasterCard;
-import static com.softhouse.cardchecker.data.CreditCard.Visa;
+import static com.softhouse.cardchecker.data.CreditCard.VISA;
 
-public class CreditCardTester {
+@RunWith(SpringRunner.class)
+public class CreditCardTest {
   @Test
   public void testAMEX() {
     Assert.assertTrue("It should be a AMEX card number.", AMEX.isThisType("340000000000000"));
@@ -42,12 +45,12 @@ public class CreditCardTester {
   }
 
   @Test
-  public void testVisa() {
-    Assert.assertTrue("It should be a Visa card number.", Visa.isThisType("4111111111111111"));
-    Assert.assertTrue("It should be a Visa card number.", Visa.isThisType("4111111111111"));
-    Assert.assertTrue("It should be a Visa card number.", Visa.isThisType("4211111111111"));
-    Assert.assertFalse("It should not be a Visa card number.", Visa.isThisType("42111111111111"));
-    Assert.assertFalse("It should not be a Visa card number.", Visa.isThisType("5111111111111"));
-    Assert.assertFalse("It should not be a Visa card number.", Visa.isThisType("7111111111111111"));
+  public void testVISA() {
+    Assert.assertTrue("It should be a VISA card number.", VISA.isThisType("4111111111111111"));
+    Assert.assertTrue("It should be a VISA card number.", VISA.isThisType("4111111111111"));
+    Assert.assertTrue("It should be a VISA card number.", VISA.isThisType("4211111111111"));
+    Assert.assertFalse("It should not be a VISA card number.", VISA.isThisType("42111111111111"));
+    Assert.assertFalse("It should not be a VISA card number.", VISA.isThisType("5111111111111"));
+    Assert.assertFalse("It should not be a VISA card number.", VISA.isThisType("7111111111111111"));
   }
 }
